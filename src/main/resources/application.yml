@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.35.253.129:3306/gadgets?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+  type-aliases-package: com.hygge.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  mapper-locations: classpath:/mapper/*.xml
+#日志打印
+logging:
+  level:
+    com.hygge.mapper: DEBUG
+  file:
+    path: ./logs/log
+
+#壁纸源地址
+http:
+  #bing网址
+  bing: https://cn.bing.com
+  #bing壁纸接口
+  bing-img: https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1
+
+#壁纸保存本地地址
+images-address: C:\Users\hasee\Desktop\壁纸\20220109
+
+#定时任务执行cron
+#scheduled:
+#  cron:
