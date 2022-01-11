@@ -31,6 +31,8 @@ public class ImageUtil {
         URLConnection urlCon = url.openConnection();
         int times = 60*1000;
         urlCon.setConnectTimeout(times);
+        urlCon.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.55");
         InputStream inputStream = urlCon.getInputStream();
         byte[] b = new byte[1024];
         File file = new File(filePath);
