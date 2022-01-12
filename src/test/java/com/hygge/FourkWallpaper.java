@@ -1,6 +1,6 @@
 package com.hygge;
 
-import com.hygge.utils.ImageUtil;
+
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
